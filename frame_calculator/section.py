@@ -15,15 +15,17 @@ def convert(section_parameters):
     """Convert raw section parameters to calculated coefficients.
 
     Calculate structural coefficients of section. Argument dictionary will be parsed according to its shape.
-    
-    - 'H' : :func:`frame.section.h`
-    - 'I' : :func:`frame.section.i`
+    Following shapes and functions are acceptable and used to calculate return values.
+
+    - 'H' : :func:`frame_calculator.section.h`
+    - 'I' : :func:`frame_calculator.section.i`
+    - 'O' : :func:`frame_calculator.section.o`
 
     Parameters
     ----------
     section_parameters : dict
         Section's shape and size. Must have 'shape' key and parameters corresponding the shape.
-        
+
     Returns
     -------
     dict
@@ -45,13 +47,27 @@ def convert(section_parameters):
 
 
 def properties(shape, **kwargs):
+    """Proxy to convert.
+
+    Prameters
+    ---------
+    shape : str
+        String represents section's shape.
+    **kwargs
+        Parameters.
+
+    Returns
+    -------
+    dict
+        Section's coefficients.
+    """
     kwargs['shape'] = shape
     return convert(kwargs)
 
 
 def h(H, B, tw, tf, r=0):
     """Calculate cross-sectional coefficients of H section.
-    
+
     H section is commonly used as horizontal steel beams.
 
     Parameters
@@ -118,7 +134,7 @@ def h(H, B, tw, tf, r=0):
 
 def t(H, B, tw, tf, r=0):
     """Calculate cross-sectional coefficients of T section.
-    
+
     T section is like cut off H section.
 
     Parameters
