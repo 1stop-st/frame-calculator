@@ -1,5 +1,5 @@
-numpy==1.13.1; python_version >= '2.7', < '3.0'
+numpy==1.13.1; python_version >= '2.7' and python_version < '3.0'
 numpy==1.13.1; python_version >= '3.4'
 numpy==1.11.3; python_version < '2.7' # rq.filter: <1.11
-numpy==1.11.3; python_version >= '3.2', < '3.4' # rq.filter: <1.11
+numpy==1.11.3; python_version >= '3.2' and python_version < '3.4' # rq.filter: <1.11
 scipy==0.19.1
