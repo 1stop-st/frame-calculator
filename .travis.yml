@@ -12,12 +12,15 @@ python:
     - "3.5-dev"
     - "3.6"
     - "3.6-dev"
-    - "3.7-dev"
     - "nightly"
 addons:
     apt:
         packages:
             - gfortran
             - libatlas-base-dev
+before_install:
+    - if [[ $TRAVIS_PYTHON_VERSION == nightly ]]; then git clone --depth 50 https://github.com/cython/cython.git && cd cython && python setup.py install; fi
+install:
+    - pip install -v -r requirements.txt
 script:
     - nosetests --with-doctest
