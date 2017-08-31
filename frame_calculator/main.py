@@ -22,19 +22,19 @@ coos = 'x', 'y', 'z', 'rx', 'ry', 'rz'
 def items(seq):
     """
     >>> item = items(["x", "y", 3])
-    >>> item.next()
+    >>> next(item)
     (0, 'x')
-    >>> item.next()
+    >>> next(item)
     (1, 'y')
-    >>> item.next()
+    >>> next(item)
     (2, 3)
-    
+
     >>> item = items(("a", 4, "f"))
-    >>> item.next()
+    >>> next(item)
     (0, 'a')
-    >>> item.next()
+    >>> next(item)
     (1, 4)
-    >>> item.next()
+    >>> next(item)
     (2, 'f')
     """
     iters = seq.items() if isinstance(seq, dict) else enumerate(seq)
@@ -146,18 +146,18 @@ def line_nodes(line_obj, nodes):
 
 def calculate(model):
     """Calculate displacements of nodes in frame structure.
-    
+
     [TODO] detailed discription.
      'nodes' : { id(hashable): { x:Real, y:Real, z:Real } }
      'lines' : { id(hashable): { n1:id, n2:id, EA:Real } }
      'boundaries' : { id(hashable): { node:id, x:Real or Bool, y:Real or Bool, z:Real or Bool, rx:Real or Bool, ry:Real or Bool, rz:Real or Bool } }
      'nodeLoads' : { id(hashable): { node:id, x:Real, y:Real, z:Real, rx:Real, ry:Real, rz:Real } }
-    
+
     Parameters
     ----------
     model : dict
         Dictionary contains structure data.
-        
+
     Returns
     -------
     dict
