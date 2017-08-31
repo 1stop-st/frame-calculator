@@ -77,7 +77,7 @@ def unfixed_coos(node_ids, boundary_objs):
 
 
 def index_dict(seq):
-    return {d: i for i, d in enumerate(seq)}
+    return dict((d, i) for i, d in enumerate(seq))
 
 
 def node_vector(node_obj):
