@@ -26,13 +26,13 @@ class Model:
         #
         # Create fixed coodinates set.
         #
-        fixedCoodinates = {(boundary['node'], c) for boundary in self.boundaries.values() for c in coodinates if boundary[c] and isinstance(boundary[c], bool)}
+        fixedCoodinates = set((boundary['node'], c) for boundary in self.boundaries.values() for c in coodinates if boundary[c] and isinstance(boundary[c], bool))
         #
         # Give unique numbers to node and coodinate pairs, except fixed ones.
         #
-        self.__index = {(node, c) for node in self.nodes for c in coodinates}
+        self.__index = set((node, c) for node in self.nodes for c in coodinates)
         self.__index -= fixedCoodinates
-        self.__index = {pair: i for i, pair in enumerate(self.__index)}
+        self.__index = dict((pair, i) for i, pair in enumerate(self.__index))
 
     def effective_indexof(self, node_id, coodinate):
         return self.__index.get((node_id, coodinate), -1)
