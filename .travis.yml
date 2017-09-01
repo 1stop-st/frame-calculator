@@ -18,7 +18,9 @@ addons:
             - gfortran
             - libatlas-base-dev
 install:
-    - pip install coverage codeclimate-test-reporter
+    - if [[ $TRAVIS_PYTHON_VERSION == '3.2' ]]; then pip install "coverage<4"; fi
+    - if [[ $TRAVIS_PYTHON_VERSION != '3.2' ]]; then pip install coverage; fi
+    - pip install codeclimate-test-reporter
     - pip install --verbose --requirement requirements.txt
 script:
     - nosetests --with-doctest --with-coverage
