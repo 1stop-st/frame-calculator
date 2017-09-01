@@ -18,6 +18,9 @@ addons:
             - gfortran
             - libatlas-base-dev
 install:
+    - pip install coverage codeclimate-test-reporter
     - pip install --verbose --requirement requirements.txt
 script:
-    - nosetests --with-doctest
+    - nosetests --with-doctest --with-coverage
+after_success:
+    - codeclimate-test-reporter
