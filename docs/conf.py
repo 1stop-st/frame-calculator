@@ -53,8 +53,6 @@ language = None
 # (Also effect to html_static_path and html_extra_path)
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-import sphinx_bootstrap_theme
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # http://www.sphinx-doc.org/ja/stable/config.html#confval-html_theme
 html_theme = 'bootstrap'
 # https://github.com/ryan-roemer/sphinx-bootstrap-theme
