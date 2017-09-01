@@ -53,10 +53,21 @@ language = None
 # (Also effect to html_static_path and html_extra_path)
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+import sphinx_bootstrap_theme
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # http://www.sphinx-doc.org/ja/stable/config.html#confval-html_theme
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'bootstrap'
+# https://github.com/ryan-roemer/sphinx-bootstrap-theme
+html_logo = 'logo.png'
 html_theme_options = {
-    'canonical_url': True
+    'navbar_title': project,
+    'navbar_site_name': 'Contents',
+    'navbar_sidebarrel': False,
+    'navbar_pagenav': False,
+    'globaltoc_depth': 2,
+    'globaltoc_includehidden': "true",
+    # Bootswatch (http://bootswatch.com/) theme.
+    'bootswatch_theme': "united"
 }
 
 # Overwrite theme's default pygments style.
