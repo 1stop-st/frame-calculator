@@ -7,8 +7,8 @@ Welcome to frame-calculator's documentation!
 ============================================
 
 .. toctree::
-   :caption: Contents:
 
+    apidocs/modules
 
 
 Indices and tables
