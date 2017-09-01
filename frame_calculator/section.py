@@ -49,7 +49,9 @@ def convert(section_parameters):
 def properties(shape, **kwargs):
     """Proxy to convert.
 
-    Prameters
+    Shape and other parameters are mixed in one dictionary.
+
+    Parameters
     ---------
     shape : str
         String represents section's shape.
