@@ -59,7 +59,7 @@ class FrameTests(TestCase):
         for i, j in zip(a, expected_values):
             self.assertEqual(i, j)
         # 辞書の場合
-        item_dict = {i: item for i, item in enumerate(items)}
+        item_dict = dict((i, item) for i, item in enumerate(items))
         a = main.items(item_dict)
         for i, j in zip(a, expected_items):
             self.assertEqual(i, j)

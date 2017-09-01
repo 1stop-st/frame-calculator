@@ -77,7 +77,7 @@ def unfixed_coos(node_ids, boundary_objs):
 
 
 def index_dict(seq):
-    return {d: i for i, d in enumerate(seq)}
+    return dict((d, i) for i, d in enumerate(seq))
 
 
 def node_vector(node_obj):
@@ -92,34 +92,34 @@ def line_vector(n1_obj, n2_obj):
 
 def calculated_section(section_obj, arg_names):
     p = section.properties(**section_obj)
-    return {
-        arg_name: p[arg_name]
+    return dict(
+        (arg_name, p[arg_name])
             for arg_name in arg_names
                 if arg_name in p
-    }
+    )
 
 
 def calculated_sections(sections, arg_names):
-    return {
-        i: calculated_section(d, arg_names)
+    return dict(
+        (i, calculated_section(d, arg_names))
             for i, d in sections
-    }
+    )
 
 
 def calculated_material(material_obj, arg_names):
     m = material_obj # 必要ならここで演算してプロパティを作る。現在は丸投げ。
-    return {
-        arg_name: m[arg_name]
+    return dict(
+        (arg_name, m[arg_name])
             for arg_name in arg_names
                 if arg_name in m
-    }
+    )
 
 
 def calculated_materials(materials, arg_names):
-    return {
-        i: calculated_material(d, arg_names)
+    return (
+        (i, calculated_material(d, arg_names))
             for i, d in materials
-    }
+    )
 
 
 def get_indexes(node_id, coo_indexes):
