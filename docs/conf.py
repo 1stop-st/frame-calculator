@@ -54,18 +54,11 @@ language = None
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # http://www.sphinx-doc.org/ja/stable/config.html#confval-html_theme
-html_theme = 'bootstrap'
+html_theme = 'sphinx_rtd_theme'
 # https://github.com/ryan-roemer/sphinx-bootstrap-theme
 html_logo = 'logo.png'
 html_theme_options = {
-    'navbar_title': project,
-    'navbar_site_name': 'Contents',
-    'navbar_sidebarrel': False,
-    'navbar_pagenav': False,
-    'globaltoc_depth': 2,
-    'globaltoc_includehidden': "true",
-    # Bootswatch (http://bootswatch.com/) theme.
-    'bootswatch_theme': "united"
+    'canonical_url': 'https://frame-calculator.readthedocs.io/en/latest/'
 }
 
 # Overwrite theme's default pygments style.
