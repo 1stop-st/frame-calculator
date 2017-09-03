@@ -148,10 +148,11 @@ def calculate(model):
     """Calculate displacements of nodes in frame structure.
 
     [TODO] detailed discription.
-     'nodes' : { id(hashable): { x:Real, y:Real, z:Real } }
-     'lines' : { id(hashable): { n1:id, n2:id, EA:Real } }
-     'boundaries' : { id(hashable): { node:id, x:Real or Bool, y:Real or Bool, z:Real or Bool, rx:Real or Bool, ry:Real or Bool, rz:Real or Bool } }
-     'nodeLoads' : { id(hashable): { node:id, x:Real, y:Real, z:Real, rx:Real, ry:Real, rz:Real } }
+    
+    - 'nodes' : { id(hashable): { x:Real, y:Real, z:Real } }
+    - 'lines' : { id(hashable): { n1:id, n2:id, EA:Real } }
+    - 'boundaries' : { id(hashable): { node:id, x:Real or Bool, y:Real or Bool, z:Real or Bool, rx:Real or Bool, ry:Real or Bool, rz:Real or Bool } }
+    - 'nodeLoads' : { id(hashable): { node:id, x:Real, y:Real, z:Real, rx:Real, ry:Real, rz:Real } }
 
     Parameters
     ----------
