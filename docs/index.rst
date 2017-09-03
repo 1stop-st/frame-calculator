@@ -14,4 +14,4 @@ Welcome to frame-calculator's documentation!
 .. toctree::
     :caption: API Reference
 
-    apidocs/modules
+    apidocs/frame_calculator

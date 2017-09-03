@@ -10,7 +10,7 @@ def run_apidoc(_):
     """Create (update) API documents automatically before generating pages."""
     pkgpath = path.join(parent_dir, 'frame_calculator')
     apipath = path.join(current_dir, 'apidocs')
-    sphinx.apidoc.main([None, '-e', '--force', '-o', apipath, pkgpath])
+    sphinx.apidoc.main([None, '--separate', '--no-toc', '--force', '-o', apipath, pkgpath])
 
 def setup(app):
     app.connect('builder-inited', run_apidoc)
