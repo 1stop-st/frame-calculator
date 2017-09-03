@@ -8,11 +8,9 @@ Example
 (TODO) example usage.
 """
 
-import numpy as np
 from numpy import zeros
 from scipy.sparse import dok_matrix
 from scipy.sparse.linalg import spsolve
-from scipy.linalg import solve
 from . import line, section
 
 
