@@ -1,7 +1,6 @@
 # coding: UTF-8
 
 from unittest import TestCase
-from frame_calculator import main
 import frame_calculator
 
 
@@ -38,46 +37,46 @@ class FrameTests(TestCase):
         expected_values = 'a', 'bb', 45, 'N'
         # タプルの場合
         item_tuple = items
-        a = main.items(item_tuple)
+        a = frame_calculator.items(item_tuple)
         for i, j in zip(a, expected_items):
             self.assertEqual(i, j)
-        a = main.keys(item_tuple)
+        a = frame_calculator.keys(item_tuple)
         for i, j in zip(a, expected_keys):
             self.assertEqual(i, j)
-        a = main.values(item_tuple)
+        a = frame_calculator.values(item_tuple)
         for i, j in zip(a, expected_values):
             self.assertEqual(i, j)
         # リストの場合
         item_list = list(items)
-        a = main.items(item_list)
+        a = frame_calculator.items(item_list)
         for i, j in zip(a, expected_items):
             self.assertEqual(i, j)
-        a = main.keys(item_list)
+        a = frame_calculator.keys(item_list)
         for i, j in zip(a, expected_keys):
             self.assertEqual(i, j)
-        a = main.values(item_list)
+        a = frame_calculator.values(item_list)
         for i, j in zip(a, expected_values):
             self.assertEqual(i, j)
         # 辞書の場合
         item_dict = dict((i, item) for i, item in enumerate(items))
-        a = main.items(item_dict)
+        a = frame_calculator.items(item_dict)
         for i, j in zip(a, expected_items):
             self.assertEqual(i, j)
-        a = main.keys(item_dict)
+        a = frame_calculator.keys(item_dict)
         for i, j in zip(a, expected_keys):
             self.assertEqual(i, j)
-        a = main.values(item_dict)
+        a = frame_calculator.values(item_dict)
         for i, j in zip(a, expected_values):
             self.assertEqual(i, j)
         # ジェネレータの場合
         item_gen = (item for item in items)
-        a = main.items(item_gen)
+        a = frame_calculator.items(item_gen)
         for i, j in zip(a, expected_items):
             self.assertEqual(i, j)
-        a = main.keys(item_gen)
+        a = frame_calculator.keys(item_gen)
         for i, j in zip(a, expected_keys):
             self.assertEqual(i, j)
-        a = main.values(item_gen)
+        a = frame_calculator.values(item_gen)
         for i, j in zip(a, expected_values):
             self.assertEqual(i, j)
 
